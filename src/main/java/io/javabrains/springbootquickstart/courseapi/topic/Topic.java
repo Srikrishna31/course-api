@@ -1,10 +1,20 @@
 package io.javabrains.springbootquickstart.courseapi.topic;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 import lombok.Getter;
 
+@Entity
 public class Topic {
-    @Getter
+    public String getId() {
+        return id;
+    }
+
+    @Id
     private String id;
+    private String name;
+    private String description;
 
     public Topic() {}
 
@@ -30,8 +40,6 @@ public class Topic {
         this.description = description;
     }
 
-    private String name;
-    private String description;
 
     public void setId(String id) {
         this.id = id;
